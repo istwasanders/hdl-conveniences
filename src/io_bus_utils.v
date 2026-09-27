@@ -6,8 +6,8 @@ module ibufds_util #(
     parameter USE_IBUFDISABLE = "TRUE"
 ) (
     output [NUM_INST - 1 : 0] O,
-    input [NUM_INST - 1 : 0] I_clk_p,
-    input [NUM_INST - 1 : 0] I_clk_n,
+    input [NUM_INST - 1 : 0] I,
+    input [NUM_INST - 1 : 0] IB,
     input DIS
 );
     genvar i;
