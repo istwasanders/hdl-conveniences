@@ -154,13 +154,19 @@ module in_fifo_util(
     parameter ALMOST_FULL_VALUE = 1;
     parameter ARRAY_MODE = "ARRAY_MODE_4_X_8";
     parameter SYNCHRONOUS_MODE = "FALSE";
-    parameter PLACEMENT_LOCATION = "IN_FIFO_X0Y0";
+    parameter PLACEMENT_LOCATION = "UNPLACED";
 
     (* BEL = "IN_FIFO" *)
     (* LOC = PLACEMENT_LOCATION *)
     // IN_FIFO: Input First-In, First-Out (FIFO)
     //          7 Series
     // Xilinx HDL Language Template, version 2026.1
+
+    initial begin
+        if(PLACEMENT_LOCATION == "UNPLACED") begin
+            $error("Must choose a placement for IN_FIFO");
+        end
+    end
 
     IN_FIFO #(
         .ALMOST_EMPTY_VALUE(ALMOST_EMPTY_VALUE),          // Almost empty offset (1-2)
