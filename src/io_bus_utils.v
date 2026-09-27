@@ -156,8 +156,6 @@ module in_fifo_util(
     parameter SYNCHRONOUS_MODE = "FALSE";
     parameter PLACEMENT_LOCATION = "UNPLACED";
 
-    (* BEL = "IN_FIFO" *)
-    (* LOC = PLACEMENT_LOCATION *)
     // IN_FIFO: Input First-In, First-Out (FIFO)
     //          7 Series
     // Xilinx HDL Language Template, version 2026.1
@@ -168,6 +166,8 @@ module in_fifo_util(
         end
     end
 
+    (* BEL = "IN_FIFO" *)
+    (* LOC = PLACEMENT_LOCATION *)
     IN_FIFO #(
         .ALMOST_EMPTY_VALUE(ALMOST_EMPTY_VALUE),          // Almost empty offset (1-2)
         .ALMOST_FULL_VALUE(ALMOST_FULL_VALUE),           // Almost full offset (1-2)
